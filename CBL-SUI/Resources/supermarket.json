@@ -1,0 +1,45 @@
+[
+    {
+        "title":"Batilisk Wings",
+        "type":"Resources",
+        "description":"Eat this delicious feast while you watch your enemies shriek",
+        "image":"BatiliskWing",
+        "ingredients": ["Dropped by Bats"],
+        "spoileage": 6,
+    },
+    {
+        "title":"Veggie Burger",
+        "type":"Recipes",
+        "description":"At least I shouldn't have to worry about it being undercooked.",
+        "image":"Veggie_Burger",
+        "ingredients": ["Onion", "Carrots"],
+        "spoileage": 7,
+        
+    },
+    {
+        "title": "Leafy Meat",
+        "type": "Resources",
+        "description": "Leafy Meat is a meat food item obtained by harvesting a Lureplant. When a Lureplant has not devoured anything else, it will dangle this item to lure prey into its field of Eyeplants. ",
+        "image":"LeafyMeat",
+        "ingredients": ["Dropped by lureplant"],
+        "spoileage": 4,
+        
+    },
+    {
+        "title": "Guacamole",
+        "type": "Recipes",
+        "description": "YUM, creamy ! Time to wack-a-mole !",
+        "image":"Guacamole",
+        "ingredients": ["Ripe stone fruit", "Moleworm"],
+        "spoileage": 1,
+        
+    },
+    {
+        "title": "Bacon and eggs",
+        "type": "Recipes",
+        "description": "Pig and eggs !",
+        "image":"Bacon_and_Eggs",
+        "ingredients": ["Eggs","Meat"],
+        "spoileage": 2,
+    }
+]

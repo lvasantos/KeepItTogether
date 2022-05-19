@@ -8,64 +8,39 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var showingPopover:Bool = false
-    
-    let menu = Bundle.main.decode([MenuSection].self, from: "menu.json")
-    let food = Bundle.main.decode([FoodsSection].self, from: "foods.json")
-    let supermarket = Bundle.main.decode([SupermarketSection].self, from: "supermarket.json")
     
     var body: some View {
-        
-//        ScrollView (.vertical){
-//            ForEach(menu) { section in
-//                Text(section.name)
-//                Divider()
-//
-//                ScrollView (.horizontal){
-//                    HStack {
-//                        ForEach(section.items) { item in
-//
-//                            Text(item.name)
-//                                .padding()
-//                                .background(
-//                                    RoundedRectangle(cornerRadius: 24, style: .continuous)
-//                                        .stroke()
-//
-//                                )
-//
-//
-//                        }
-//                        .padding()
-//                        .shadow(color: .gray, radius: 3, x: 2, y: 2)
-//                        .font(.subheadline)
-//                    }
-//                }
-//
-//            }
-//
-//        }
-
-        NavigationView{
-            List{
-
-                ForEach(supermarket){ itemSection in
-                    NavigationLink(destination: LayoutViewTest(item: itemSection)) {
-                        Text(itemSection.title)
-                    }
-                }
-
-            }
-            .navigationTitle("First View Screen")
-            .listStyle(InsetGroupedListStyle())
-            .navigationBarTitleDisplayMode(.large)
+        ZStack {
+            //TabView1
+            //Top text for "Home Page"
+            //ITEM ROW & Favorites
             
-        }
+            //TabView2
+            //Search in all items
+            
+            Text("")
+            TabView{
+            ItemRow()
+                .tabItem {
+                    Label("Main", systemImage: "star")
+                }
+            SearchViewTest()
+                .tabItem {
+                    Label("Search", systemImage: "magnifyingglass")
+                        .foregroundColor(.white)
+                }
                 
+            }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        
         ContentView()
+            .preferredColorScheme(.light)
+        ContentView()
+            .preferredColorScheme(.dark)
     }
 }

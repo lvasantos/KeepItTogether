@@ -1,0 +1,180 @@
+[
+    {
+        "type":"Tools",
+        "image":"Icon_Tools",
+        "items":[
+            {
+                "title":"Axe",
+                "description":"Chop down trees ! ",
+                "image":"Axe",
+                "acquired":[
+                    "Craft"
+                ],
+                "ingredients":[
+                    "Twigs",
+                    "Flint"
+                ],
+                "spoileage": 0,
+            },
+            {
+                "title":"Pickaxe",
+                "description":"Break down rocks. ",
+                "image":"Pickaxe",
+                "acquired":[
+                    "Craft"
+                ],
+                "ingredients":[
+                    "Twigs",
+                    "Flint"
+                ],
+                "spoileage": 0,
+            },
+            {
+                "title":"Shovel",
+                "description":"Dig up all sorts of things. ",
+                "image":"Shovel",
+                "acquired":[
+                    "Craft"
+                ],
+                "ingredients":[
+                    "Twigs",
+                    "Flint"
+                ],
+                "spoileage": 0,
+            }
+        ]
+    },
+    {
+        "type":"Food",
+        "image":"Icon_Food",
+        "items":[
+            {
+                "title":"Carrot",
+                "description":"Where's the protein ?",
+                "image":"Carrot",
+                "ingredients":[
+                    "None",
+                ],
+                "acquired":[
+                    "Natural ocurrence"
+                ],
+                "spoileage": 1,
+            }
+        ]
+    },
+    {
+        "type":"Light",
+        "image":"Icon_Light",
+        "items":[
+            {
+                "title":"Campfire",
+                "description":"Provides light while burning",
+                "image":"Campfire_Build",
+                "acquired":[
+                    "Craft"
+                ],
+                "ingredients":[
+                    "Log",
+                    "Cutgrass"
+                ],
+                "spoileage": 0,
+            }
+        ]
+    },
+    {
+        "type":"Survival",
+        "image":"Icon_Survival",
+        "items":[
+            {
+                "title":"Trap",
+                "description":"Capture small creatures.",
+                "image":"Trap",
+                "ingredients":[
+                    "Cutgrass",
+                    "Twigs"
+                ],
+                "acquired":[
+                    "Nothing"
+                ],
+                "spoileage": 0,
+            },
+            {
+                "title":"Bird Trap",
+                "description":"Capture winged beasts.",
+                "image":"Bird_Trap",
+                "ingredients":[
+                    "Silk",
+                    "Twigs"
+                ],
+                "acquired":[
+                    "Nothing"
+                ],
+                "spoileage": 0,
+                
+            },
+            {
+                "title":"Bug Net",
+                "description":"Catch bugs.",
+                "image":"Bug_Net",
+                "ingredients":[
+                    "Silk",
+                    "Twigs",
+                    "Rope"
+                ],
+                "acquired":[
+                    "Nothing"
+                ],
+                "spoileage": 0,
+                
+            },
+            {
+                "title":"Fishing rod",
+                "description":"Go fishing. For fish.",
+                "image":"Fishing_Rod",
+                "ingredients":[
+                    "Silk",
+                    "Twigs"
+                ],
+                "acquired":[
+                    "Nothing"
+                ],
+                "spoileage": 0,
+                
+            },
+            {
+                "title":"Umbrella",
+                "description":"Keep the sun and rain at bay.",
+                "image":"Umbrella",
+                "ingredients":[
+                    "Silk",
+                    "Twigs",
+                    "Pig Skin"
+                ],
+                "acquired":[
+                    "Nothing"
+                ],
+                "spoileage": 0,
+                
+            }
+        ]
+    },
+    {
+        "type":"Cookbook",
+        "image":"Cookbook",
+        "items":[
+            {
+                "title":"Guacamole",
+                "description":"YUM, creamy ! Time to wack-a-mole !",
+                "image":"Guacamole",
+                "ingredients":[
+                    "Ripe stone fruit",
+                    "Moleworm"
+                ],
+                "acquired":[
+                    "Nothing"
+                ],
+                "spoileage": 1,
+            }
+        ]
+    }
+]
