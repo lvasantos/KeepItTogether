@@ -22,7 +22,7 @@ struct ContentView: View {
             TabView{
             ItemRow()
                 .tabItem {
-                    Label("Main", systemImage: "star")
+                    Label("Type", systemImage: "square.grid.2x2")
                 }
             SearchViewTest()
                 .tabItem {

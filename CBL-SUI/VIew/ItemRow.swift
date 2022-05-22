@@ -10,46 +10,90 @@ import SwiftUI
 struct ItemRow: View {
     @State var searchItem = ""
     
+    let columnCount:Int = 2
+    let gridSpacing:CGFloat = 5.0
+    
     let sup = Bundle.main.decode([FoodSection].self, from: "foods.json")
-    var body: some View {        
+    var body: some View {
         NavigationView {
-            ZStack {
-                
-                Color.clear.edgesIgnoringSafeArea(.all)
-                ScrollView (.horizontal) {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 24)
-                            .foregroundColor(.gray).opacity(0.5)
-                        
-                        HStack{
-                            ForEach(sup!) {
-                                itemSection in
-                                NavigationLink(destination: SectionView(itemPerSection: itemSection)) {
+            ScrollView(.vertical) {
+                LazyVGrid(
+                    columns: Array(
+                        repeating: GridItem(
+                            .flexible(),
+                            spacing: gridSpacing
+                        ),
+                        count: columnCount
+                    ),
+                    spacing: gridSpacing
+                ){
+                    ForEach(sup!) { itemSection in
+                        NavigationLink(destination: SectionView(itemPerSection: itemSection)){
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 24)
+                                    .foregroundColor(.secondary)
+                                    .frame(
+                                        maxWidth: UIScreen.main.bounds.width*0.5,
+                                        maxHeight:UIScreen.main.bounds.height*0.3)
+                                
+                                VStack{
+                                    Image(itemSection.image)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(
+                                            maxWidth: UIScreen.main.bounds.width*0.3,
+                                            maxHeight:UIScreen.main.bounds.height*0.3)
+                                    Text(itemSection.type)
+                                        .foregroundColor(.primary)
+                                        .font(.subheadline)
+                                        .bold()
                                     
-                                    VStack{
-                                        Image(itemSection.image)
-                                            .resizable()
-                                            .padding(4)
-                                            .scaledToFit()
-                                        Text(itemSection.type)
-                                            .font(.headline)
-                                            .foregroundColor(.white)
-                                    }
                                 }
-                            }.navigationBarHidden(false)
+                            }
                         }
                     }
-                    .fixedSize()
-                    Spacer()
                 }
             }
         }
+        .ignoresSafeArea()
     }
 }
+
 
 
 struct ItemRow_Previews: PreviewProvider {
     static var previews: some View {
         ItemRow()
+            .preferredColorScheme(.light)
+        ItemRow()
+            .preferredColorScheme(.dark)
     }
 }
+
+
+
+
+//ZStack {
+//    RoundedRectangle(cornerRadius: 24)
+//        .foregroundColor(.gray).opacity(0.5)
+//
+//    HStack{
+//        ForEach(sup!) {
+//            itemSection in
+//            NavigationLink(destination: SectionView(itemPerSection: itemSection)) {
+//
+//                VStack{
+//                    Image(itemSection.image)
+//                        .resizable()
+//                        .padding(4)
+//                        .scaledToFit()
+//                    Text(itemSection.type)
+//                        .font(.headline)
+//                        .foregroundColor(.white)
+//                }
+//            }
+//        }.navigationBarHidden(false)
+//    }
+//}
+//.fixedSize()
+//Spacer()
