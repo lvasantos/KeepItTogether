@@ -8,24 +8,17 @@
 import SwiftUI
 
 struct ItemRow: View {
-    @State var searchItem = ""
     
+    @State var searchItem = ""
     let columnCount:Int = 2
     let gridSpacing:CGFloat = 5.0
+    let sup = Bundle.main.decode([itemSection].self, from: "foods.json")
     
-    let sup = Bundle.main.decode([FoodSection].self, from: "foods.json")
     var body: some View {
         NavigationView {
             ScrollView(.vertical) {
                 LazyVGrid(
-                    columns: Array(
-                        repeating: GridItem(
-                            .flexible(),
-                            spacing: gridSpacing
-                        ),
-                        count: columnCount
-                    ),
-                    spacing: gridSpacing
+                    columns: Array(repeating: GridItem(.flexible(), spacing: gridSpacing), count: columnCount),spacing: gridSpacing
                 ){
                     ForEach(sup!) { itemSection in
                         NavigationLink(destination: SectionView(itemPerSection: itemSection)){
@@ -37,17 +30,10 @@ struct ItemRow: View {
                                         maxHeight:UIScreen.main.bounds.height*0.3)
                                 
                                 VStack{
-                                    Image(itemSection.image)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(
+                                    Image(itemSection.image).resizable().scaledToFit().frame(
                                             maxWidth: UIScreen.main.bounds.width*0.3,
                                             maxHeight:UIScreen.main.bounds.height*0.3)
-                                    Text(itemSection.type)
-                                        .foregroundColor(.primary)
-                                        .font(.subheadline)
-                                        .bold()
-                                    
+                                    Text(itemSection.type).foregroundColor(.primary).font(.subheadline).bold()
                                 }
                             }
                         }
@@ -59,8 +45,6 @@ struct ItemRow: View {
     }
 }
 
-
-
 struct ItemRow_Previews: PreviewProvider {
     static var previews: some View {
         ItemRow()
@@ -69,31 +53,3 @@ struct ItemRow_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
     }
 }
-
-
-
-
-//ZStack {
-//    RoundedRectangle(cornerRadius: 24)
-//        .foregroundColor(.gray).opacity(0.5)
-//
-//    HStack{
-//        ForEach(sup!) {
-//            itemSection in
-//            NavigationLink(destination: SectionView(itemPerSection: itemSection)) {
-//
-//                VStack{
-//                    Image(itemSection.image)
-//                        .resizable()
-//                        .padding(4)
-//                        .scaledToFit()
-//                    Text(itemSection.type)
-//                        .font(.headline)
-//                        .foregroundColor(.white)
-//                }
-//            }
-//        }.navigationBarHidden(false)
-//    }
-//}
-//.fixedSize()
-//Spacer()

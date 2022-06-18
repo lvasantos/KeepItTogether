@@ -9,29 +9,29 @@ import SwiftUI
 
 struct SearchViewTest: View {
     
-    let dsDb: [FoodSection] = Bundle.main.decode([FoodSection].self, from: "foods.json")!
+    let dsDb: [itemSection] = Bundle.main.decode([itemSection].self, from: "foods.json")!
     
     @State var searchQuery = ""
     var filteredResult: [Item] {
         if searchQuery.isEmpty {
-            var foodCatcher: [Item] = []
+            var itemCatcher: [Item] = []
             for object in dsDb {
                 for item in object.items {
-                    foodCatcher.append(item)
+                    itemCatcher.append(item)
                 }
             }
-            return foodCatcher
+            return itemCatcher
         } else {
-            var foodCatcher: [Item] = []
+            var itemCatcher: [Item] = []
             for object in dsDb {
                 for item in object.items {
-                    foodCatcher.append(item)
+                    itemCatcher.append(item)
                 }
             }
-            return foodCatcher.filter { $0.title.lowercased().contains(searchQuery.lowercased())}
+            return itemCatcher.filter { $0.title.lowercased().contains(searchQuery.lowercased())}
         }
     }
-
+    
     var body: some View {
         NavigationView {
             List(filteredResult) { result in
@@ -47,17 +47,14 @@ struct SearchViewTest: View {
                             .font(.title)
                             .minimumScaleFactor(0.5)
                             .lineLimit(2)
-                        
-                            
                     }
                     .frame(
                         maxHeight: UIScreen.main.bounds.height*0.1)
                 }
-                
-                }
             }
-        .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always))
         }
+        .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always))
+    }
 }
 
 struct SearchViewTest_Previews: PreviewProvider {

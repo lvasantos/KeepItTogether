@@ -36,7 +36,6 @@ struct DetailView: View {
                     maxHeight: UIScreen.main.bounds.height*0.2,
                     alignment: .leading)
                 
-                
                 Group{
                     Section(header: Text("Ingredients").font(.title).bold().padding(.bottom, 5)) {
                         VStack(alignment: .leading) {
@@ -45,8 +44,6 @@ struct DetailView: View {
                                     .font(.title3.leading(.loose))
                             }
                         }
-                        
-                        
                     }
                     
                     Section(header:Text("More info").font(.title2).bold().padding([.bottom,.top], 5)){
@@ -61,12 +58,8 @@ struct DetailView: View {
                                 }
                             }
                             .font(.title3.leading(.tight))
-                            
-                            
-                            
                         }
                     }
-            
                 }
                 .frame(maxWidth: UIScreen.main.bounds.width)
             }

@@ -11,13 +11,6 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            //TabView1
-            //Top text for "Home Page"
-            //ITEM ROW & Favorites
-            
-            //TabView2
-            //Search in all items
-            
             Text("")
             TabView{
             ItemRow()
@@ -29,7 +22,6 @@ struct ContentView: View {
                     Label("Search", systemImage: "magnifyingglass")
                         .foregroundColor(.white)
                 }
-                
             }
         }
     }
@@ -37,7 +29,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        
         ContentView()
             .preferredColorScheme(.light)
         ContentView()
